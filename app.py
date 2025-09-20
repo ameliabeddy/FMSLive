@@ -1,16 +1,16 @@
 import streamlit as st
 
 # Title of the app
-st.title("Project Requirements")
+st.title("Project Text Display")
 
-# Read the requirements.txt file
+# Read a display-only text file
 try:
-    with open("requirements.txt", "r") as file:
-        requirements = file.read()
+    with open("display.txt", "r") as file:
+        content = file.read()
 
-    # Display in a code block
-    st.subheader("Dependencies (from requirements.txt):")
-    st.code(requirements, language='text')
+    st.subheader("Here is your message:")
+    st.code(content, language='text')
 
 except FileNotFoundError:
-    st.error("requirements.txt file not found. Please upload it to the project directory.")
+    st.error("File not found. Please upload it to the project directory.")
+
